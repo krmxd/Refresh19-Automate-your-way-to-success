@@ -78,9 +78,9 @@ New Automator --> Tickets --> Name: refresh19demo --> create
 4. Action --> Trigger webhook :
 Request type: Post
 Callback URL: The url of the azure function. This was generated during the deployment. (you can find a copy in the triggerUrl.txt in the working directory)
-..* Encoding: JSON
-..* Select SIMPLE mode
-..* Content : Ticket ID
+* Encoding: JSON
+* Select SIMPLE mode
+* Content : Ticket ID
 
 Active the automator workflow.
 
