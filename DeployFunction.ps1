@@ -112,7 +112,8 @@ try {
         ApiVersion = '2015-08-01'
         Force      = $true
     }
-    $functionTrigger = Invoke-AzResourceAction $functionParams -ErrorAction Stop
+
+    $functionTrigger = Invoke-AzResourceAction @functionParams -ErrorAction Stop
     #$functionTrigger.trigger_url
 }
 catch {
