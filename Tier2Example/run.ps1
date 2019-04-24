@@ -1,7 +1,7 @@
-$myVaultName = ""   #Your Azure vault for retrieving secrets (don't store APIkeys and password in plaintext)
-$mySecretName = ""  #Name of the secret you need to retrieve. Example FreshApiKey
+#$myVaultName = ""   #Your Azure vault for retrieving secrets (don't store APIkeys and password in plaintext)
+#$mySecretName = ""  #Name of the secret you need to retrieve. Example FreshApiKey
 $freshTenant = ""   # Please enter your fresh tenantname. Example <YOUR-TENANT-NAME>.freshservice.com. 
-
+$apiKey = ""
 #Working with the incomming request body
 $requestBody = Get-Content $req -Raw 
 $convertedBody = $requestBody | convertfrom-json
@@ -27,8 +27,9 @@ function Get-VaultSecret {
     return $getResponse
 }
 
+
 #build header
-$APIKey = (Get-VaultSecret -vaultName $myVaultName -secretName $mySecretName).value
+#$APIKey = (Get-VaultSecret -vaultName $myVaultName -secretName $mySecretName).value
 $EncodedCredentials = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $APIKey,$null)))
 $HTTPHeaders = @{}
 $HTTPHeaders.Add('Authorization', ("Basic {0}" -f $EncodedCredentials))
@@ -44,14 +45,14 @@ $ticketResponse = '{ "helpdesk_note": { "body":"Hi, Tier2 retrieved the request 
 $urlResponse = "https://$($freshTenant).freshservice.com/helpdesk/tickets/$($freshTicket)/conversations/note.json"
 Invoke-RestMethod -Method Post -Body $ticketResponse -Uri $urlResponse -Headers $HTTPHeaders
 
-
+#Use the below to call your backend system.
 $body = @{
     freshTicket = $freshTicket
-    SomeCustomField1 = $($requestData.requested_item.requested_item_values.SomeCustomField1)
-    SomeCustomField2 = $($requestData.requested_item.requested_item_values.SomeCustomField2)
-    SomeCustomField3 = $($requestData.requested_item.requested_item_values.SomeCustomField3)
-    SomeCustomField4 = $($requestData.requested_item.requested_item_values.SomeCustomField4)
-    SomeCustomField5 = $($requestData.requested_item.requested_item_values.SomeCustomField5)
+    textinputField = $($requestData.requested_item.requested_item_values.textinput)
+    #SomeCustomField2 = $($requestData.requested_item.requested_item_values.SomeCustomField2)
+    #SomeCustomField3 = $($requestData.requested_item.requested_item_values.SomeCustomField3)
+    #SomeCustomField4 = $($requestData.requested_item.requested_item_values.SomeCustomField4)
+    #SomeCustomField5 = $($requestData.requested_item.requested_item_values.SomeCustomField5)
 }
 
 $webhookurl = '' # Enter here the WebhookUrl for your backend system(Tier3). 
@@ -64,6 +65,8 @@ $webhookurl = '' # Enter here the WebhookUrl for your backend system(Tier3).
     URI         = $webhookurl
 }
 
-$triggerTier3 = Invoke-RestMethod @params 
+#Uncomment the line below to send the request to a backend system.
+#$triggerTier3 = Invoke-RestMethod @params 
+
 
 Out-File -Encoding Ascii -FilePath $res -inputObject $triggerTier3
