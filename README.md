@@ -10,10 +10,10 @@ I hope you enjoyed refresh19 as much as I did.
 We've decided to build this starterkit based on Azure Functions and make use of Powershell.
 
 Azure Functions because it's free! 
-Get your free account [here] (https://azure.microsoft.com/free/)
+Get your free account [here](https://azure.microsoft.com/free/)
 
 Powershell mostly because it's not that hard to start with and has a great community to help out with any question.
-Read more on powershell [here] (https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6) if you are new to Powershell. And yes, Mac and Linux users aren't left out. 
+Read more on powershell [here](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6) if you are new to Powershell. And yes, Mac and Linux users aren't left out. 
 
 Make sure you download or clone the contents of this repo and run everything that you do from the root of that specific folder.
 
@@ -46,7 +46,7 @@ Make sure you edit the script and update the following lines:
 Run the script and you can see every piece of information you might need to automate requests etc. For now, we don't need any information because we know the fieldname and thats all we need now.
 
 ### Step 4. Logon to Azure using Powershell
-If you are new to Powershell. Install powershell if you are running MacOs or a Linux distribution, if you are running windows, install the latest version of [AZ-Modules] (https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az?view=azps-1.8.0)
+If you are new to Powershell. Install powershell if you are running MacOs or a Linux distribution, if you are running windows, install the latest version of [AZ-Modules](https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az?view=azps-1.8.0)
 
 
 Login to your Azure Subscription using Connect-AzAccount
