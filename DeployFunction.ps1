@@ -122,3 +122,4 @@ catch {
 
 Write-Output "Deployment finished"
 Write-Output "Your deployment trigger URL: $($functionTrigger.trigger_url)"
+$($functionTrigger.trigger_url) | Add-content triggerUrl.txt

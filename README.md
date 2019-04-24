@@ -77,7 +77,7 @@ B. Condition --> And the subject is "refresh19demo"
 C. Action --> Set the status as pending
 D. Action --> Trigger webhook :
 Request type: Post
-Callback URL: The url of the azure function
+Callback URL: The url of the azure function. This was generated during the deployment. (you can find a copy in the triggerUrl.txt in the working directory)
 Encoding: JSON
 Select SIMPLE mode
 Content : Ticket ID
