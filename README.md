@@ -16,4 +16,4 @@ Powershell mostly because it's not that hard to start with and has a great commu
 Read more on powershell [here] (https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6) if you are new to Powershell. And yes, Mac and Linux users aren't left out. 
 
 ### Step 1. Get your free Azure account running
-Signup using the link above. Without a Azure subscription we can't move forward
+Signup using the link above. Without a Azure subscription we can't move forward.
