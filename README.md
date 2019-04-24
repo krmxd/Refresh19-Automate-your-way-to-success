@@ -22,9 +22,9 @@ Signup using the link above. Without a Azure subscription we can't move forward.
 
 ### Step 2. Create a new service request
 Create a new service request for this demo. 
- Item Name: refresh19demo
- Short Description: refresh19demo
- Description: refresh19demo
+1. Item Name: refresh19demo
+2. Short Description: refresh19demo
+3. Description: refresh19demo
 
 Just add a single line textbox and name it "textinput"
 
