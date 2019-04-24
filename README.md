@@ -72,15 +72,15 @@ Logon to your freshservice environment, navigate to the admin, click on the Admi
 Create a new automator with the following steps.
 New Automator --> Tickets --> Name: refresh19demo --> create
 
-A. Event --> When a ServiceRequest is raised
-B. Condition --> And the subject is "refresh19demo"
-C. Action --> Set the status as pending
-D. Action --> Trigger webhook :
+1. Event --> When a ServiceRequest is raised
+2. Condition --> And the subject is "refresh19demo"
+3. Action --> Set the status as pending
+4. Action --> Trigger webhook :
 Request type: Post
 Callback URL: The url of the azure function. This was generated during the deployment. (you can find a copy in the triggerUrl.txt in the working directory)
-Encoding: JSON
-Select SIMPLE mode
-Content : Ticket ID
+..* Encoding: JSON
+..* Select SIMPLE mode
+..* Content : Ticket ID
 
 Active the automator workflow.
 
