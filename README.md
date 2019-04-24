@@ -1,11 +1,12 @@
 # Refresh19-Automate-your-way-to-success
 Contains the freshservice automation starter kit, used in the Refresh19 presentation
 
-##Thank you for visiting
+## Thank you for visiting
 I hope you enjoyed refresh19 as much as I did.
 
-##How to use this repo
-###Requirements
+## How to use this repo
+
+### Requirements
 We've decided to build this starterkit based on Azure Functions and make use of Powershell.
 
 Azure Functions because it's free! 
